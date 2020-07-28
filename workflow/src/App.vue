@@ -26,9 +26,10 @@
             height="520">
                 <v-list-item
                         v-for="item in items"
-                        :key="item.title"
-                        v-on:click="urlto(item.title)"
+                        :key="item.name"
+                        v-on:click="urlto(item.name)"
                         link
+
                 >
                     <v-list-item-icon>
                         <v-icon>{{ item.icon }}</v-icon>
@@ -78,12 +79,12 @@
             return {
                 drawer: true,
                 items: [
-                    {title: 'home', icon: 'fa-desktop'},
-                    {title: 'navigator', icon: 'fa-paper-plane'},
-                    {title: 'deployMonitor', icon: 'fa-check-circle'},
-                    {title: 'scriptManager', icon: 'fa-code'},
-                    {title: 'automation', icon: 'fa-tasks'},
-                    {title: 'reminder', icon: 'fa-bell'}
+                    {name: 'home', title: '首页', icon: 'fa-desktop'},
+                    {name: 'navigator', title: '工具导航', icon: 'fa-paper-plane'},
+                    {name: 'deployMonitor', title: '发布相关', icon: 'fa-check-circle'},
+                    {name: 'scriptManager', title: '脚本管理', icon: 'fa-code'},
+                    {name: 'automation', title: '自动化管理', icon: 'fa-tasks'},
+                    {name: 'reminder', title: '待办提醒', icon: 'fa-bell'}
                 ],
                 permanent: true,
                 background: true,
