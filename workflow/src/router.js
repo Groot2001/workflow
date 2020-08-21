@@ -6,6 +6,8 @@ import deployMonitor from './views/deployMonitor'
 import reminder from './views/reminder'
 import scriptManager from './views/scriptManager'
 import automation from './views/automation'
+import login from '@/components/login'
+import dataManager from './views/dataManager'
 
 Vue.use(Router)
 
@@ -15,6 +17,10 @@ export default new Router({
         {
             path: '/',
             redirect: '/home'
+        },
+        {
+            path: '/index',
+            component: login
         },
         {
             path: '/home',
@@ -34,12 +40,17 @@ export default new Router({
             component: navigator
         },
         {
-            path: 'scriptManager',
+            path: '/scriptManager',
             component: scriptManager
         },
         {
             path: '/automation',
             component: automation
+        },
+        {
+            path: '/dataManager',
+            component: dataManager
+
         }
 
     ]

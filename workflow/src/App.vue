@@ -1,5 +1,5 @@
 <template>
-    <v-app>
+    <v-app v-if="isLogin">
         <v-navigation-drawer
                 app
                 :permanent="permanent"
@@ -47,12 +47,12 @@
         </v-app-bar-->
         <v-main>
 
-            <!-- Provides the application the proper gutter -->
-            <v-container fluid>
-                <!-- If using vue-router -->
-                <router-view></router-view>
-            </v-container>
-        </v-main>
+        <!-- Provides the application the proper gutter -->
+        <v-container fluid>
+            <!-- If using vue-router -->
+            <router-view></router-view>
+        </v-container>
+    </v-main>
 
         <v-footer
                 class="font-weight-medium"
@@ -68,6 +68,10 @@
         </v-footer>
 
     </v-app>
+    <v-app v-else>
+        <!--h2>首页index<v-btn v-on:click="urlto('index')">请登录！</v-btn></!--h2-->
+        <router-view></router-view>
+    </v-app>
 </template>
 
 <script>
@@ -77,12 +81,14 @@
         name: 'App',
         data() {
             return {
+                isLogin: true,
                 drawer: true,
                 items: [
                     {name: 'home', title: '首页', icon: 'fa-desktop'},
                     {name: 'navigator', title: '工具导航', icon: 'fa-paper-plane'},
                     {name: 'deployMonitor', title: '发布相关', icon: 'fa-check-circle'},
                     {name: 'scriptManager', title: '脚本管理', icon: 'fa-code'},
+                    {name: 'dataManager', title: '数据管理', icon: 'fa-database'},
                     {name: 'automation', title: '自动化管理', icon: 'fa-tasks'},
                     {name: 'reminder', title: '待办提醒', icon: 'fa-bell'}
                 ],

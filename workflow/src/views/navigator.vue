@@ -42,10 +42,10 @@
                                 <v-container>
                                     <v-row>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field v-model="editedItem.name" label="name"></v-text-field>
+                                            <a><v-text-field v-model="editedItem.name" label="name"></v-text-field></a>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field v-model="editedItem.link" label="link"></v-text-field>
+                                            <v-text-field v-model="editedItem.link" label="link" ></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
                                             <v-text-field v-model="editedItem.username" label="username"></v-text-field>
@@ -221,7 +221,7 @@
 
             deleteItem(item) {
                 const index = this.desserts.indexOf(item)
-                confirm('Are you sure you want to delete this item?') && this.desserts.splice(index, 1)
+                confirm('是否删除此数据?') && this.desserts.splice(index, 1)
             },
 
             close() {
