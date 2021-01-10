@@ -86,7 +86,7 @@
                 items: [
                     {name: 'home', title: '首页', icon: 'fa-desktop'},
                     {name: 'navigator', title: '工具导航', icon: 'fa-paper-plane'},
-                    {name: 'deployMonitor', title: '发布相关', icon: 'fa-check-circle'},
+                    {name: 'deployManager', title: '发布管理', icon: 'fa-check-circle'},
                     {name: 'scriptManager', title: '脚本管理', icon: 'fa-code'},
                     {name: 'dataManager', title: '数据管理', icon: 'fa-database'},
                     {name: 'automation', title: '自动化管理', icon: 'fa-tasks'},

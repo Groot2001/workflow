@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>profile</h2>
+        <!--h2>profile</!--h2>
         <v-card class="mb-4">
       <v-card-text>
         <v-select
@@ -10,7 +10,7 @@
         ></v-select>
       </v-card-text>
     </v-card>
-    <v-stepper v-model="e1">
+    <v-stepper-- v-model="e1">
       <v-stepper-header>
         <template v-for="n in steps">
           <v-stepper-step
@@ -51,37 +51,40 @@
           <v-btn text>Cancel</v-btn>
         </v-stepper-content>
       </v-stepper-items>
-    </v-stepper>
+    </v-stepper-->
+
+    <v-card>
+      <v-tabs v-model="tab">
+        <v-tab v-for="item in items" :key="item.tab">
+            {{ item.tab }}
+        </v-tab>
+        
+      </v-tabs>
+      <v-tabs-items v-model="tab">
+          <v-tab-item v-for="item in items" :key="item.tab">
+              <v-text>
+                {{ item.content }}
+              </v-text>
+          </v-tab-item>
+      </v-tabs-items>
+    </v-card>
     </div>
 </template>
 
 <script>
     export default {
-        name: "profile",
-         data () {
-      return {
-        e1: 1,
-        steps: 2,
-      }
-    },
+        name: "deployManager",
+        data () {
+          return {
+            tab: null,
+            items: [
+              { tab: '发布记录', content: '发布记录' },
+              { tab: '模板', content: '模板' },
+              { tab: '发布统计', content: '发布统计' },
+            ],
+          }
+        },
 
-    watch: {
-      steps (val) {
-        if (this.e1 > val) {
-          this.e1 = val
-        }
-      },
-    },
-
-    methods: {
-      nextStep (n) {
-        if (n === this.steps) {
-          this.e1 = 1
-        } else {
-          this.e1 = n + 1
-        }
-      },
-    },
     }
 </script>
 

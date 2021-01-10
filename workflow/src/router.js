@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import home from './views/home'
 import navigator from './views/navigator'
-import deployMonitor from './views/deployMonitor'
+import deployManager from './views/deployManager'
 import reminder from './views/reminder'
 import scriptManager from './views/scriptManager'
 import automation from './views/automation'
@@ -32,8 +32,8 @@ export default new Router({
         },
 
         {
-            path: '/deployMonitor',
-            component: deployMonitor
+            path: '/deployManager',
+            component: deployManager
         },
         {
             path: '/navigator',
